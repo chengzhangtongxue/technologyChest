@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>time元素与pubdate属性</title>
+</head>
+<body>
+    <time datetime="2017-02-14">情人节</time>
+    <time datetime="2017-02-14T20:00">情人节</time>
+    <time datetime="2017-02-14" pubdate>2015-09-19</time>
+
+    <h3>备注：</h3>
+    <p>编码时机器读到的部分是datetime属性的值，而元素的开始标记与结束标记之间的内容是显示在网页上的；</p>
+    <p>datetime中日期与时间之间要用T分隔，T表示时间;</p>
+    <p>在时间后面加上Z表示给机器编码时使用UTC标准时间；</p>
+    <p>最后一个加上了时差，表示向机器编码另一地区时间，如果是本地时间，则不需要添加时差。</p>
+    <h3>time元素中pubdate属性的使用</h3>
+    
+    <p>属性是可选的、布尔值属性。它可以用到time元素上，表示文章或整个网页的发布日期。比如：
+    
+    　　　　<time datetime="2013-11-29" pubdate>11月29日</time>
+    </p>
+    
+    <h3>备注：</h3>
+    <p>time元素不能代表是发布日期，只有增加了pubdate属性才代表是发布的日期。文章的发布日期（pubdate）</p>
+</body>
+</html>
