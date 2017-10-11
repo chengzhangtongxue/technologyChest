@@ -3,6 +3,10 @@ var url = require('url');
 const { URL } = require('url');
 const { URLSearchParams } = require('url');
 
+let mo = require('./module.js');
+console.log(mo);
+
+
 // console.log(url);
 // console.log(URL);
 // console.log(URLSearchParams);
@@ -12,15 +16,15 @@ myURL.searchParams.forEach((value, name, searchParams) => {
 });
 // console.log(url.parse('https://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash'));
 
-var server = http.createServer(function(req,res) {
-    if(req.url === '/favicon.ico') {
-        return;
-    }
-    console.log(req);
-    console.log('---' + req.url);
-    res.writeHead(200,{
-        'Content-type':'text/html'
-    });
-    res.end(req+'');
-});
-server.listen(3000);
+// var server = http.createServer(function(req,res) {
+//     if(req.url === '/favicon.ico') {
+//         return;
+//     }
+//     console.log(req);
+//     console.log('---' + req.url);
+//     res.writeHead(200,{
+//         'Content-type':'text/html'
+//     });
+//     res.end(req+'');
+// });
+// server.listen(3000);

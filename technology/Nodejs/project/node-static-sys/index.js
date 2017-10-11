@@ -16,13 +16,13 @@ fs.readFile('./mime.json','utf8',(err,data) => {
         fs.readFile('./static/'+pathname,(err,data) => {
             if(err) {
                 fs.readFile('./404.html',(err,data) => {
-                    res.setHeader('Content-Type',mineObj['.html']);
+                    res.setHeader('Content-Type',mineObj['.html'] || 'text/html');
                     res.end(data);
                 });
                 return ;
             }
             res.writeHead(200,{
-                'Content-Type':mineObj[extname]
+                'Content-Type':mineObj[extname] || 'text/html'
             });
             res.end(data);
         });
