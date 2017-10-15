@@ -1,19 +1,21 @@
 var http = require('http');
 var url = require('url');
-const { URL } = require('url');
-const { URLSearchParams } = require('url');
+// const { URL } = require('url');
+// const { URLSearchParams } = require('url');
 
-let mo = require('./module.js');
-console.log(mo);
+var dateformater = require('dateformater');
+
+// let mo = require('./module.js');
+// console.log(mo);
 
 
 // console.log(url);
 // console.log(URL);
 // console.log(URLSearchParams);
-const myURL = new URL('https://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash');
-myURL.searchParams.forEach((value, name, searchParams) => {
+// const myURL = new URL('https://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash');
+// myURL.searchParams.forEach((value, name, searchParams) => {
     // console.log(name, value, searchParams.get('query'));
-});
+// });
 // console.log(url.parse('https://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash'));
 
 // var server = http.createServer(function(req,res) {
@@ -28,3 +30,5 @@ myURL.searchParams.forEach((value, name, searchParams) => {
 //     res.end(req+'');
 // });
 // server.listen(3000);
+
+console.log(dateformater.format(new Date(), 'YYYYMMDDhhmmssSSS'));
