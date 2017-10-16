@@ -3,11 +3,10 @@ var url = require('url');
 // const { URL } = require('url');
 // const { URLSearchParams } = require('url');
 
-var dateformater = require('dateformater');
-
 // let mo = require('./module.js');
 // console.log(mo);
 
+// console.log(require.resolve('./module.js'));
 
 // console.log(url);
 // console.log(URL);
@@ -18,6 +17,9 @@ var dateformater = require('dateformater');
 // });
 // console.log(url.parse('https://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash'));
 
+/**
+ * http的get请求
+ */
 // var server = http.createServer(function(req,res) {
 //     if(req.url === '/favicon.ico') {
 //         return;
@@ -31,4 +33,20 @@ var dateformater = require('dateformater');
 // });
 // server.listen(3000);
 
-console.log(dateformater.format(new Date(), 'YYYYMMDDhhmmssSSS'));
+/**
+ * http的post请求
+ */
+http.createServer((req,res) => {
+    // console.log(req.addListener);
+    var allData = '';
+    req.addListener('data',(chunk) => {
+        allData += chunk;
+    });
+
+    req.addListener('end',() => {
+        console.log(allData.toString());
+        res.end('success');
+    });
+
+    
+}).listen(3000);
