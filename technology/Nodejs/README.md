@@ -20,4 +20,12 @@ http 方面的库，可以发起 get 或 post 请求
 5. 无平台依赖，适合前后端，能用于浏览器和Node.js
 6. 兼容CMD，AMD以及CommonJS模块环境
 
+### [supervisor](https://github.com/petruisfan/node-supervisor)
+许多服务脚本，当修改了文件内容时必须重新启动才能完成数据的更新操作，这会大大降低开发效率。   
+Node.js在更新操作时必须终止Node.js然后重新运行。这种模式不利于开发阶段。   
+supervisor 可以帮助你实现这个功能,它会监视你对代码的改动,并自动重动 Node.js。  
+安装方法
+> npm install -g supervisor
 
+启动方法
+> supervisor index.js
