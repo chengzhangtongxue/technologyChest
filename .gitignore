@@ -1,0 +1,2 @@
+# 排除提交到github上的时候，那些文件是不提交的
+node_modules
