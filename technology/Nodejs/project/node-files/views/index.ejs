@@ -9,6 +9,17 @@
 
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+      img {
+        max-width: 100%;
+      }
+      .col-md-3 {
+        border:1px solid #ccc;
+      }
+      .text-align {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -27,16 +38,30 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <!-- <li class="active"><a href="#"> <span class="sr-only">(current)</span></a></li> -->
-              <li><a href="/addDir">新增相册</a></li>
+              <li><a href="/home/toAddDir">新增相册</a></li>
             </ul>
-           
-            
           </div>
         </div>
       </nav>
 
-      <div class="row">
-        <div class="col-md-3">.col-md-4</div>
+      <div class="container">
+        <div class="row">
+          <% for(var i=0; i<fileArr.length; i++) { %>
+            <div class="col-xs-4 col-md-3">
+              
+                <% if(fileArr[i].extname) { %>
+                  <a href="/public<%=fileArr[i].baseUrl%><%=fileArr[i].name %>">
+                    <img src="/public<%=fileArr[i].baseUrl%><%=fileArr[i].name %>" alt="">
+                  </a>
+                <% } else { %>
+                  <a href="/dir<%=fileArr[i].baseUrl%><%=fileArr[i].name %>">
+                    <img src="/public/file.jpeg" alt="">
+                  </a>
+                <% } %>
+                <h2 class="text-align"><%=fileArr[i].name %></h2>
+            </div>
+          <% } %>
+        </div>
       </div>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
