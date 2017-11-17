@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://118.89.16.142:8000/stylesheets/markdown/github-markdown.css">
+    <script src="./node_modules/marked/lib/marked.js"></script>
+</head>
+<body>
+    <textarea name="" id="textarea" cols="100" rows="50"></textarea>
+    <div id="content"></div>
+    <script>
+      document.getElementById('content').innerHTML =
+        marked('# Marked in browser\n\nRendered by **marked**.');
+
+
+        document.getElementById('textarea').addEventListener('blur',function() {
+            document.getElementById('content').innerHTML = marked(this.value);
+        },false);
+    </script>
+</body>
+</html>
